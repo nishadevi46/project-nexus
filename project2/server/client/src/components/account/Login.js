@@ -2,6 +2,8 @@ import { Box, TextField, Button, styled, Typography } from '@mui/material'
 import Im from '../../images/1.png'
 import {useState, useContext} from 'react'
 import {API} from '../../service/api'
+import { useNavigate } from 'react-router-dom'
+import {DataContext} from '../../context/DataProvider'
 const Component = styled(Box)`
 width:400px;
 margin:auto;
@@ -49,7 +51,10 @@ const SignupButton = styled(Button)`
     border-radius: 2px;
     box-shadow:0 2px 4px 0 rgb(0 0 0/ 20%);
 `
-
+const loginInitialValue={
+    username:'',
+    password:''
+}
 const signupIntialValue={
     name:'',
     username:'',
@@ -62,17 +67,23 @@ line-height:0;
 margin-top:10px;
 font-weight:600;
 `
-const Login = () => {
+const Login = ({isUserAuthenticated}) => {
     const imageURL = `${Im}`;
     const [account, toggleAccount] = useState('login');
     const [signup,setSignup] = useState(signupIntialValue)
     const [error,setError]=useState('')
+    const [login,setLogin]=useState(loginInitialValue)
+    const navigate = useNavigate()
+    const {setAccount}=useContext(DataContext)
     const toggleSignup=()=>{
         account === 'login'? toggleAccount('signup'):toggleAccount('login')
     }
     const onInputChange = (e)=>{
         setSignup({...signup,[e.target.name]:e.target.value});
       }
+   const onValueChange=(e)=>{
+        setLogin({...login,[e.target.name]:e.target.value});
+   }
       const signupUser =async()=>{
         let response= await API.userSignup(signup)
         if(response.isSuccess){
@@ -84,16 +95,29 @@ const Login = () => {
        setError('something went wrong! plz try later')
         }
      }
-
+     const loginUser= async()=>{
+        let response= await API.userLogin(login)
+        if(response.isSuccess){
+            setError('')
+            sessionStorage.setItem('accessToken', `Bearer ${response.data.accessToken}`);
+            sessionStorage.setItem('refreshToken', `Bearer ${response.data.refreshToken}`);
+            setAccount({username:response.data.username,name:response.data.name})
+            isUserAuthenticated(true)
+            navigate('/')
+        }
+        else{
+         setError('something went wrong! plz try later')
+        }
+     }
     return (
         <Component>
             <Image src={imageURL} alt="login" srcset="" />
             {account === 'login' ?
             <Wrapper>
-            <TextField variant="standard" name='username' label="Enter username" />
-            <TextField variant="standard" name='password' label="Enter password" />
+            <TextField variant="standard" value={login.username} onChange={(e)=>onValueChange(e)} name='username' label="Enter username"/>
+    <TextField variant="standard" value={login.password} onChange={(e)=>onValueChange(e)} name='password' label="Enter password"/>
             {error && <Error>{error}</Error>}
-            <LoginButton variant="contained" >Login </LoginButton>
+            <LoginButton variant="contained" onClick={()=>loginUser()}>Login </LoginButton>
             <Text style={{ textAlign: 'center' }}>OR</Text>
             <SignupButton onClick={()=>{toggleSignup()}}>Create an account</SignupButton>
             </Wrapper>
