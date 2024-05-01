@@ -1,7 +1,7 @@
 import { Box, TextField, Button, styled, Typography } from '@mui/material'
 import Im from '../../images/1.png'
 import {useState, useContext} from 'react'
-
+import {API} from '../../service/api'
 const Component = styled(Box)`
 width:400px;
 margin:auto;
@@ -55,17 +55,36 @@ const signupIntialValue={
     username:'',
     password:''
 }
-
+const Error =styled(Typography)`
+font-size:10px;
+color:#ff6161;
+line-height:0;
+margin-top:10px;
+font-weight:600;
+`
 const Login = () => {
     const imageURL = `${Im}`;
     const [account, toggleAccount] = useState('login');
     const [signup,setSignup] = useState(signupIntialValue)
+    const [error,setError]=useState('')
     const toggleSignup=()=>{
         account === 'login'? toggleAccount('signup'):toggleAccount('login')
     }
     const onInputChange = (e)=>{
         setSignup({...signup,[e.target.name]:e.target.value});
       }
+      const signupUser =async()=>{
+        let response= await API.userSignup(signup)
+        if(response.isSuccess){
+         setError('')
+         setSignup(signupIntialValue)
+         toggleAccount('login')
+        }
+        else{
+       setError('something went wrong! plz try later')
+        }
+     }
+
     return (
         <Component>
             <Image src={imageURL} alt="login" srcset="" />
@@ -73,6 +92,7 @@ const Login = () => {
             <Wrapper>
             <TextField variant="standard" name='username' label="Enter username" />
             <TextField variant="standard" name='password' label="Enter password" />
+            {error && <Error>{error}</Error>}
             <LoginButton variant="contained" >Login </LoginButton>
             <Text style={{ textAlign: 'center' }}>OR</Text>
             <SignupButton onClick={()=>{toggleSignup()}}>Create an account</SignupButton>
@@ -83,8 +103,8 @@ const Login = () => {
     <TextField variant="standard"    onChange={(e)=>onInputChange(e)}
     name='username'label="Enter username"/>
     <TextField variant="standard"    onChange={(e)=>onInputChange(e)} name='password'label="Enter password"/>
-
-    <SignupButton>SignUp </SignupButton>
+    {error && <Error>{error}</Error>}
+    <SignupButton onClick={()=>signupUser()}>SignUp </SignupButton>
             <Text style={{ textAlign: 'center' }}>OR</Text>
             <LoginButton variant="contained" onClick={()=>{toggleSignup()}}>Already have an account</LoginButton>
     
