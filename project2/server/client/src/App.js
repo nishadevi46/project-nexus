@@ -3,6 +3,7 @@ import './App.css';
 import Login from './components/account/Login'
 import DataProvider from './context/DataProvider';
 import Home from './components/home/Home'
+import About from './components/about/about'
 import { BrowserRouter, Routes, Route, Outlet, Navigate } from 'react-router-dom'
 import Header from './components/header/Header'
 import Bimage from './images/food.jpg'
@@ -46,7 +47,13 @@ function App() {
 
 <Route path='/' element={<PrivateRoute isAuthenticated={isAuthenticated} />}>
   <Route path='/' element={<div style={{ marginTop: 64 }}><Home /></div>} /></Route>
+
+  <Route path='/about' element={<PrivateRoute isAuthenticated={isAuthenticated} />}>
+              <Route path='/about' element={<div style={{ marginTop: 64 }}><About /></div>} /></Route>
+
      </Routes>
+     
+
      </div>
      </BrowserRouter>
      </DataProvider>

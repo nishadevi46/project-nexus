@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Bona+Nova&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Bona Nova', serif;
+    transition:0.2s linear;
+}
+body{
+    background-color: #0a0904;
+    overflow-x: hidden;
+}
+html{
+   
+    overflow-x: hidden;
+    scroll-padding-top:9rem;
+    scroll-behavior: smooth;
+}
+section{
+    padding:2rem 7%;
+    font-size:62.5%;
+    overflow-x: hidden;
+    scroll-padding-top:9rem;
+    scroll-behavior: smooth;
+
+}
+.main{
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+.heading h1{
+    color:#030e12;
+    font-size: 48px;
+    font-weight:900;
+    letter-spacing: 1px;
+    padding-top:2rem;
+    margin: 1rem;
+}
+.home{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    background:linear-gradient(90deg, rgb(0 0 0/90%), rgb(68,68,68/35%));    
+    background-size: cover;
+    background-position: center;
+}
+.home .content{
+    max-width:60rem;
+}
+.heading{
+    text-align:center;
+    color:#fff;
+    text-transform: uppercase;
+    padding-bottom:3.5rem;
+    font-size:4rem;
+}
+.heading span{
+    color:#ffc107;
+    text-transform: uppercase;
+}
+.box-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(30rem,1fr));
+    gap:1.5rem;
+    
+}
+.menu .box-container .box{
+    padding:5rem;
+    text-align: center;
+    border:0.2rem solid #ffc107;
+    font-size:62.5%;
+}
+.menu .box-container .box img{
+    height:10rem;
+    border-radius: 50%;
+}
+.menu .box-container .box .price{
+    color:#fff;
+    font-size:2.5rem;
+    padding:0.5rem 0;
+}
+.menu .box-container .box .price span{
+text-decoration:line-through;
+font-size:1.5rem;
+font-weight: lighter;
+}
+.menu .box-container .box:hover{
+    background:#443300;
+    transition: 0.5s;
+}
+.h3{
+    font-size: 6rem;
+    text-transform: uppercase;
+    color:#fff;
+}
