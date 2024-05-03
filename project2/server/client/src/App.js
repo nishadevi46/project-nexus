@@ -4,6 +4,7 @@ import Login from './components/account/Login'
 import DataProvider from './context/DataProvider';
 import Home from './components/home/Home'
 import About from './components/about/about'
+import Contact from './components/contact/Contact';
 import { BrowserRouter, Routes, Route, Outlet, Navigate } from 'react-router-dom'
 import Header from './components/header/Header'
 import Bimage from './images/food.jpg'
@@ -50,6 +51,10 @@ function App() {
 
   <Route path='/about' element={<PrivateRoute isAuthenticated={isAuthenticated} />}>
               <Route path='/about' element={<div style={{ marginTop: 64 }}><About /></div>} /></Route>
+
+    
+              <Route path='/contact' element={<PrivateRoute isAuthenticated={isAuthenticated} />}>
+            <Route path='/contact' element={<div style={{ marginTop: 64 }} ><Contact /></div>} /></Route>
 
      </Routes>
      

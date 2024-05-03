@@ -5,7 +5,7 @@ import { Box, styled } from '@mui/material';
 const Wrapper = styled(Box)`
     padding: 20px;
    color:#fff;
-`;
+`
 
 
 const About = () => {

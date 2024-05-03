@@ -1,5 +1,5 @@
 import React from 'react'
-import { menu } from '../constants/data';
+import { menu3 } from '../constants/data';
 import {Button, styled } from '@mui/material'
 import './style.css';
 const SignupButton = styled(Button)`
@@ -10,20 +10,20 @@ const SignupButton = styled(Button)`
     border-radius: 2px;
     box-shadow:0 2px 4px 0 rgb(0 0 0/ 20%);
 `
-const Meal = () => {
+const Meal4 = () => {
     return (
 
         <section className='menu' id='menu'>
-            <h1 className='heading'>our <span>Specials</span></h1>
+            <h1 className='heading'>Ice<span>Creams</span></h1>
 
             <div className="box-container">
                 {
-                    menu.map((item, index) => (
+                    menu3.map((item, index) => (
                         <div className='box'>
                             <img src={item.img} alt="" />
                             <h3>Order Now</h3>
                             <div className="price">
-                            {item.prices} <span> {item.price} </span>
+                            $5
                             </div>
                             <SignupButton >Add to cart</SignupButton>
                         </div>
@@ -34,4 +34,4 @@ const Meal = () => {
 
     )
 }
-export default Meal;
+export default Meal4;

@@ -62,7 +62,7 @@ section{
 }
 .box-container{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(30rem,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(20rem,1fr));
     gap:1.5rem;
     
 }
@@ -73,8 +73,9 @@ section{
     font-size:62.5%;
 }
 .menu .box-container .box img{
-    height:10rem;
+    height:8rem;
     border-radius: 50%;
+    overflow-x: hidden;
 }
 .menu .box-container .box .price{
     color:#fff;
@@ -85,6 +86,10 @@ section{
 text-decoration:line-through;
 font-size:1.5rem;
 font-weight: lighter;
+}
+.btn{
+    width:100%;
+    text-align: center;
 }
 .menu .box-container .box:hover{
     background:#443300;
