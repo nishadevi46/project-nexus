@@ -2,7 +2,7 @@ import {AppBar,Toolbar, styled} from '@mui/material'
 import {Link} from 'react-router-dom'
 const Component =styled(AppBar)`
 color: #EEEEEE;
-background:#322C2B;
+background:#0C0C0C;
 `
 const Container = styled(Toolbar)`
 justify-content:center;

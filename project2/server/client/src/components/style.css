@@ -7,7 +7,7 @@
     transition:0.2s linear;
 }
 body{
-    background-color: #0a0904;
+    background-color: #171010;
     overflow-x: hidden;
 }
 html{
@@ -51,13 +51,13 @@ section{
 }
 .heading{
     text-align:center;
-    color:#fff;
+    color:#FFDFDF;
     text-transform: uppercase;
     padding-bottom:3.5rem;
     font-size:4rem;
 }
 .heading span{
-    color:#ffc107;
+    color:#F875AA;
     text-transform: uppercase;
 }
 .box-container{
@@ -69,7 +69,7 @@ section{
 .menu .box-container .box{
     padding:5rem;
     text-align: center;
-    border:0.2rem solid #ffc107;
+    border:0.2rem solid #F08FC0;
     font-size:62.5%;
 }
 .menu .box-container .box img{
@@ -92,11 +92,121 @@ font-weight: lighter;
     text-align: center;
 }
 .menu .box-container .box:hover{
-    background:#443300;
+    background:#FFDADA;
     transition: 0.5s;
 }
 .h3{
     font-size: 6rem;
     text-transform: uppercase;
     color:#fff;
+}
+
+.menu1 .box-container .box{
+    padding:5rem;
+    text-align: center;
+    border:0.2rem solid #DF5E5E;
+    font-size:62.5%;
+}
+.menu1 .box-container .box img{
+    height:8rem;
+    border-radius: 50%;
+    overflow-x: hidden;
+}
+.menu1 .box-container .box .price{
+    color:#fff;
+    font-size:2.5rem;
+    padding:0.5rem 0;
+}
+.menu1 .box-container .box .price span{
+text-decoration:line-through;
+font-size:1.5rem;
+font-weight: lighter;
+}
+.menu1 .box-container .box:hover{
+    background:#E98580;
+    transition: 0.5s;
+}
+
+.menu2 .box-container .box{
+    padding:5rem;
+    text-align: center;
+    border:0.2rem solid #F5F4F4;
+    font-size:62.5%;
+}
+.menu2 .box-container .box img{
+    height:8rem;
+    border-radius: 50%;
+    overflow-x: hidden;
+}
+.menu2 .box-container .box .price{
+    color:#fff;
+    font-size:2.5rem;
+    padding:0.5rem 0;
+}
+.menu2 .box-container .box .price span{
+text-decoration:line-through;
+font-size:1.5rem;
+font-weight: lighter;
+}
+.menu2 .box-container .box:hover{
+    background:#E6E6E6;
+    transition: 0.5s;
+}
+.menu3 .box-container .box{
+    padding:5rem;
+    text-align: center;
+    border:0.2rem solid #DCBFFF;
+    font-size:62.5%;
+}
+.menu3 .box-container .box img{
+    height:8rem;
+    border-radius: 50%;
+    overflow-x: hidden;
+}
+.menu3 .box-container .box .price{
+    color:#fff;
+    font-size:2.5rem;
+    padding:0.5rem 0;
+}
+.menu3 .box-container .box .price span{
+text-decoration:line-through;
+font-size:1.5rem;
+font-weight: lighter;
+}
+.menu3 .box-container .box:hover{
+    background:#F1EAFF;
+    transition: 0.5s;
+}
+.heading3{
+    text-align:center;
+    color:#F2F1EB;
+    text-transform: uppercase;
+    padding-bottom:3.5rem;
+    font-size:4rem;
+}
+.heading3 span{
+    color:#DCBFFF;
+    text-transform: uppercase;
+}
+.heading2{
+    text-align:center;
+    color:#DED0B6;
+    text-transform: uppercase;
+    padding-bottom:3.5rem;
+    font-size:4rem;
+}
+.heading2 span{
+    color:#A8DF8E;
+    text-transform: uppercase;
+}
+.heading1{
+    text-align:center;
+    color:#FFD966;
+    text-transform: uppercase;
+    padding-bottom:3.5rem;
+    font-size:4rem;
+}
+.heading1 span{
+    color:#FF6969;
+    text-transform: uppercase;
 }

@@ -13,8 +13,8 @@ const SignupButton = styled(Button)`
 const Meal4 = () => {
     return (
 
-        <section className='menu' id='menu'>
-            <h1 className='heading'>Ice<span>Creams</span></h1>
+        <section className='menu3' id='menu'>
+            <h1 className='heading3'>Ice<span>Creams</span></h1>
 
             <div className="box-container">
                 {
