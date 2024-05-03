@@ -1,5 +1,7 @@
 import {AppBar,Toolbar, styled} from '@mui/material'
 import {Link} from 'react-router-dom'
+import '../../components/style.css';
+import Bimage from '../../images/food2.jpg'
 const Component =styled(AppBar)`
 color: #EEEEEE;
 background:#0C0C0C;
@@ -16,7 +18,7 @@ justify-content:center;
 `
 const Header = ()=>{
     return(
-       <Component>
+       <Component  style={{backgroundImage: `url(${Bimage})`}}>
         <Container>
             <Link to='/'>HOME</Link>
             <Link to='/about'>ABOUT</Link>

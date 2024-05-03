@@ -55,6 +55,8 @@ function App() {
     
               <Route path='/contact' element={<PrivateRoute isAuthenticated={isAuthenticated} />}>
             <Route path='/contact' element={<div style={{ marginTop: 64 }} ><Contact /></div>} /></Route>
+ 
+
 
      </Routes>
      
